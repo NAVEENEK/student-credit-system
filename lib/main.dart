@@ -11,9 +11,46 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: home(),
+      title: "Student Credit System",
+      home: Home(),
       debugShowCheckedModeBanner: false,
-      
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 113, 213, 117)
+          ),
+
+          cardTheme: CardThemeData(
+            elevation: 3,
+            margin: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 8
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8)
+            ),
+          ),
+
+          appBarTheme: const AppBarTheme(
+            centerTitle: true,
+            elevation: 0
+          ),
+          textTheme: const TextTheme(
+            titleLarge: TextStyle(fontWeight: FontWeight.bold),
+            bodyMedium: TextStyle(fontSize: 14)
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8)
+              )
+            )
+          ),
+          
+
+
+
+      ),
     );
   }
 }
