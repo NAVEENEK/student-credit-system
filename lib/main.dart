@@ -1,5 +1,5 @@
+import 'package:credit_point_system/widget/select_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Student Credit System",
-      home: HomePage(),
+      home: SelectScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

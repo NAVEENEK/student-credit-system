@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/widget/event_card.dart';
 
 class CategorySection extends StatelessWidget {
   final String title;
