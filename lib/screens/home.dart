@@ -1,4 +1,6 @@
 import 'package:credit_point_system/screens/login_page.dart';
+import 'package:credit_point_system/screens/profile_page.dart';
+import 'package:credit_point_system/widget/common_appbar.dart';
 import 'package:credit_point_system/widget/slider_section.dart';
 import 'package:flutter/material.dart';
 import '../widget/category_section.dart';
@@ -9,25 +11,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Events"),
-        actions: [
-          Padding(
-            padding: EdgeInsetsGeometry.only(right: 12),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.green[400]
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
-              },
-              child: const Text('Login'),
-            ),
-          ),
-        ],
+      appBar: CommonAppbar(
+        title: "Events",
+        islogged:true,
+        logginPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder:(_)=>const LoginPage()
+              )
+            );
+        },
+        profilePressed:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder:(_)=>const ProfilePage() 
+            )
+          );
+        },
       ),
       body: SafeArea(
         child: Column(
