@@ -1,3 +1,5 @@
+import 'package:credit_point_system/screens/login_page.dart';
+import 'package:credit_point_system/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class CommonAppbar extends StatelessWidget
@@ -5,17 +7,12 @@ implements PreferredSizeWidget{
 
   final String title;
   final bool islogged;
-  final void Function() logginPressed;
-  final void Function() profilePressed;
 
 
   const CommonAppbar({
     super.key, 
     required this.title,
-    required this.islogged,
-    required this.logginPressed,
-    required this.profilePressed
-    
+    required this.islogged,    
     });
 
   
@@ -30,11 +27,25 @@ implements PreferredSizeWidget{
           padding: const EdgeInsets.all(12),
           child: islogged 
           ?IconButton(
-           onPressed: profilePressed,
+           onPressed: (){
+            Navigator.push(
+              context, 
+              MaterialPageRoute(
+                builder:(_)=>ProfilePage() 
+              )
+              );
+           },
            icon: Icon(Icons.person)
            )
            :TextButton(
-             onPressed: logginPressed,
+             onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:(_)=>LoginPage() 
+                )
+              );
+             },
              style: TextButton.styleFrom(
               backgroundColor: Colors.green[400],
              ),
