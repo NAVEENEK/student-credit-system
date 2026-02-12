@@ -35,10 +35,10 @@ implements PreferredSizeWidget{
            )
            :TextButton(
              onPressed: logginPressed,
-             child: const Text("Login"),
              style: TextButton.styleFrom(
               backgroundColor: Colors.green[400],
              ),
+             child: const Text("Login"),
            )
           )
       ],

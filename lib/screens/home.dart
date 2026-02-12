@@ -14,22 +14,6 @@ class HomePage extends StatelessWidget {
       appBar: CommonAppbar(
         title: "Events",
         islogged:true,
-        logginPressed: (){
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder:(_)=>const LoginPage()
-              )
-            );
-        },
-        profilePressed:(){
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder:(_)=>const ProfilePage() 
-            )
-          );
-        },
       ),
       body: SafeArea(
         child: Column(
