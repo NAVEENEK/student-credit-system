@@ -26,78 +26,59 @@ class EventinfoPage extends StatelessWidget {
                     ),
                   ),
 
-                  //add gradient effect to the background image 
+                  //add gradient effect to the background image
                   Positioned.fill(
-                    child:Container(
+                    child: Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors:[
-                            Colors.black87,
-                            Colors.transparent
-                          ] ,
+                          colors: [Colors.black87, Colors.transparent],
                           begin: Alignment.bottomCenter,
-                          end:Alignment.topCenter
+                          end: Alignment.topCenter,
                         ),
                       ),
-                    ) 
+                    ),
                   ),
 
                   Positioned(
-                    bottom:30,
-                    left:20,
-                    right:20,
-                    child:Column(
+                    bottom: 30,
+                    left: 20,
+                    right: 20,
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           "club Name",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
 
-                        const SizedBox(
-                          height: 8,
-                        ),
+                        const SizedBox(height: 8),
 
                         const Text(
                           "Event Name",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
-                            fontWeight: FontWeight.bold
+                            fontWeight: FontWeight.bold,
                           ),
-                          ),
+                        ),
 
-                          const SizedBox(
-                            height: 8,
-                            ),
+                        const SizedBox(height: 8),
 
-                            Row(
-                              children: [
-                                ElevatedButton(
-                                  onPressed: (){
-                                    Navigator.push(
-                                      context,
-                                       MaterialPageRoute(
-                                        builder: (_)=>EnrollPage()
-                                        ),
-                                       );
-                                  }, 
-                                  child: Text("Enroll")
-                                  )
-                              ],
-                            )
-
-                        
+                        ElevatedButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context, builder: (_)=>EnrollPage()
+                              );
+                          },
+                          child: Text("Enroll"),
+                        ),
                       ],
-                    )
-
-                  )
+                    ),
+                  ),
                 ],
               ),
             ),
+            
           ],
         ),
       ),
