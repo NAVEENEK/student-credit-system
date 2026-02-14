@@ -1,5 +1,3 @@
-import 'package:credit_point_system/screens/login_page.dart';
-import 'package:credit_point_system/screens/profile_page.dart';
 import 'package:credit_point_system/widget/common_appbar.dart';
 import 'package:credit_point_system/widget/slider_section.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppbar(
-        title: "Events",
-        islogged:true,
-      ),
+      appBar: CommonAppbar(title: "Events", islogged: true),
       body: SafeArea(
         child: Column(
           children: [

@@ -7,20 +7,80 @@ class EventinfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: CommonAppbar(title: "Event", islogged: false),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              SizedBox(
-                //height:screenHeight* 0.45, ,
-              )
-            ],
-           
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: screenHeight * 0.45,
+              child: Stack(
+                children: [
+                  //background image
+                  Positioned.fill(
+                    child: Image.network(
+                      "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+
+                  //add gradient effect to the background image
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.black87, Colors.transparent],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Positioned(
+                    bottom: 30,
+                    left: 20,
+                    right: 20,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "club Name",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        const Text(
+                          "Event Name",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        const SizedBox(height: 8),
+
+                        ElevatedButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context, builder: (_)=>EnrollPage()
+                              );
+                          },
+                          child: Text("Enroll"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+          ],
+        ),
       ),
     );
   }
