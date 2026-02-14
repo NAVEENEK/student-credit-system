@@ -1,3 +1,4 @@
+import 'package:credit_point_system/screens/event_info_page.dart';
 import 'package:flutter/material.dart';
 import '/widget/event_card.dart';
 
@@ -30,7 +31,17 @@ class CategorySection extends StatelessWidget {
             itemCount: 5,
             physics: BouncingScrollPhysics(),
             itemBuilder: (context,index){
-              return EventCard();
+              return InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_)=>EventinfoPage()
+                    )
+                  );
+                },
+                child: EventCard()
+                );
             },
             separatorBuilder:(_, _)=>const SizedBox(width: 12),
             ),
