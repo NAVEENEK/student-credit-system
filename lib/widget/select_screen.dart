@@ -1,3 +1,4 @@
+import 'package:credit_point_system/screens/club.dart';
 import 'package:credit_point_system/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,9 @@ class _SelectScreenState extends State<SelectScreen> {
 
   int selectedIndex=0;
 
-  final List<Widget> pages=const[
+  final List<Widget> pages=[
     HomePage(),
-    Placeholder(),
+    clubPage(),
     Placeholder(),
     Placeholder()
   ];

@@ -24,7 +24,10 @@ class EventCard extends StatelessWidget {
                 top:Radius.circular(12)
               )
             ),
-            child: Placeholder(),
+            child: Image.network(
+              "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+              fit: BoxFit.cover,
+            ),
           )
           //add event name and description here
         ],
