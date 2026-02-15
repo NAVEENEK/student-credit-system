@@ -67,8 +67,9 @@ class EventinfoPage extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             showDialog(
-                              context: context, builder: (_)=>EnrollPage()
-                              );
+                              context: context,
+                              builder: (_) => EnrollPage(),
+                            );
                           },
                           child: Text("Enroll"),
                         ),
@@ -78,7 +79,6 @@ class EventinfoPage extends StatelessWidget {
                 ],
               ),
             ),
-            
           ],
         ),
       ),
