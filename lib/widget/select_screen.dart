@@ -1,5 +1,6 @@
 import 'package:credit_point_system/screens/club.dart';
 import 'package:credit_point_system/screens/home.dart';
+import 'package:credit_point_system/screens/news.dart';
 import 'package:flutter/material.dart';
 
 class SelectScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SelectScreenState extends State<SelectScreen> {
   final List<Widget> pages=[
     HomePage(),
     clubPage(),
-    Placeholder(),
+    newsPage(),
     Placeholder()
   ];
 

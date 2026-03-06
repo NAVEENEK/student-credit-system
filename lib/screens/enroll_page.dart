@@ -10,7 +10,7 @@ class EnrollPage extends StatefulWidget {
 class _EnrollPageState extends State<EnrollPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _namecontroller = TextEditingController();
-  String? _selectSem;
+  String? _selectYear;
   String? _selectDepartment;
   String? _selectGender;
 
@@ -55,33 +55,26 @@ class _EnrollPageState extends State<EnrollPage> {
               const SizedBox(height: 8),
 
               DropdownButtonFormField<String>(
-                value: _selectSem,
+                value: _selectYear,
                 decoration: const InputDecoration(
-                  labelText: "Semester",
+                  labelText: "Year",
                   border: OutlineInputBorder(),
                 ),
 
                 items:
                     [
-                          "sem 1",
-                          "sem 2",
-                          "sem 3",
-                          "sem 4",
-                          "sem 5",
-                          "sem 6",
-                          "sem 7",
-                          "sem 8",
+                          "year 1","year 2","year 3","year 4",
                         ]
                         .map(
-                          (sem) => DropdownMenuItem<String>(
-                            value: sem,
-                            child: Text(sem),
+                          (year) => DropdownMenuItem<String>(
+                            value: year,
+                            child: Text(year),
                           ),
                         )
                         .toList(),
                 onChanged: (value) {
                   setState(() {
-                    _selectSem = value;
+                    _selectYear = value;
                   });
                 },
                 validator: (value) => value == null ? "Select semester" : null,
@@ -146,7 +139,10 @@ class _EnrollPageState extends State<EnrollPage> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        print("enrolled");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Enrolled Successfully")
+                        ));
                         Navigator.pop(context);
                       }
                     },
