@@ -1,3 +1,4 @@
+import 'package:credit_point_system/screens/all_events.dart';
 import 'package:credit_point_system/widget/common_appbar.dart';
 import 'package:credit_point_system/widget/slider_section.dart';
 import 'package:flutter/material.dart';
@@ -17,14 +18,27 @@ class HomePage extends StatelessWidget {
 
             Expanded(
               child: ListView(
-                padding: EdgeInsets.all(22),
-                children: const [
-                  CategorySection(title: "Sports"),
-                  CategorySection(title: "Tech"),
-                  CategorySection(title: "Arts"),
-                  CategorySection(title: "Entertainment"),
-                  CategorySection(title: "mech"),
-                  CategorySection(title: "electrical"),
+                padding: const EdgeInsets.all(22),
+                children:  [
+                  CategorySection(title: "Workshop"),
+                  CategorySection(title: "seminar"),
+                  CategorySection(title: "competition"),
+                  CategorySection(title: "Exhibition"),
+                  CategorySection(title: "Training"),
+                  CategorySection(title: "Campaign"),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context)=>const AllEvents(),
+                          )
+                        );
+                    }, 
+                    child: Text("view all"))
                 ],
               ),
             ),
